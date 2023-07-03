@@ -10,7 +10,7 @@ from db.dals import book_dal
 router = APIRouter()
 
 @router.get("/books2")
-async def get_all_books(async_session: Session = Depends(get_async_session)):
+async def get_all_books2(async_session: Session = Depends(get_async_session)):
     return await book_dal.get_all_books(async_session)
 
 @router.get("/books")

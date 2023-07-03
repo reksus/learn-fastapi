@@ -1,0 +1,46 @@
+project
+  .github/workflows
+  resources/ (response_msgs.py - '''CAR_DOES_NOT_EXIST_ERROR = "car does not exist"''')
+  src/
+    main.py
+    
+    alembic/
+    internal/
+      admin.py
+    routers/
+    
+    # Option 1
+    models/
+    schemas/
+    service/
+
+    # Option 2 
+    domain/
+      car/
+        models.py
+        schemas.py
+        service.py
+    
+    handlers/
+      http_error.py
+    
+    config.py
+    database.py
+    dependencies.py
+    
+    oauth2.py (if required)
+  test/
+    config/
+      database_test_config.py
+    templates/
+    test_api/
+    base_insertions.py
+    database_tables.py
+    database_tests.py
+  .gitignore
+  README.md
+  requirements-local.txt
+  requirements.txt
+  runtime.txt
+  settings.json (vscode)
+  

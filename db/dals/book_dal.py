@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Optional, Any, Awaitable
 
 from sqlalchemy import update
 from sqlalchemy.future import select
@@ -18,7 +18,7 @@ class BookDAL():
     def __init__(self, db_session: Session):
         self.db_session = db_session
 
-    async def create_book(self, name: str, author: str,   release_year: int):
+    async def create_book(self, name: str, author: str,   release_year: int) -> None:
         new_book = Book(name=name,author=author, release_year=release_year)
         self.db_session.add(new_book)
         await self.db_session.flush()
